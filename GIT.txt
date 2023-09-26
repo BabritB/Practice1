@@ -1,0 +1,173 @@
+GitHub basically is a for-profit company owned by Microsoft, which hosts Git repositories online. It helps users share their git repository online, with other users, or access it remotely.
+
+Step by Step Process
+----------------------
+
+First of all, make sure to install Git on your computer. Now, head toward that folder that you want to push there on GitHub. Then, follow the following steps. 
+
+Step 1. Open Git Bash in that particular folder. Type git init (this will make that folder a repository)
+
+cd ~/abc/My Repo
+$ git init
+
+Step 2: Type git add . (this will add all files to the repository)
+
+Step 3. Type git commit -m “Initial commit msg” (all files now in the repository)
+
+Step 4. Type git status (you will get a msg, “On branch master nothing to commit, working tree clean” this shows your local repository is finally created)
+
+These are the steps that are used to make a local repository, now to push the same to a GitHub repository we use the following steps-
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Step 1. Open your GitHub profile and create a New Repository. Copy the SSH Key of that created repository.
+
+Step 2. Open Git Bash in that particular folder that you want to push. Type git remote add origin PASTE_SSH_KEY_OF_CREATED_REPO. Then type git push origin master –force (type ‘main’ in place of the ‘master’ if your default branch is master). 
+
+Type git status (you will get a msg, “On branch master nothing to commit, working tree clean” this shows your local repository is finally created)
+
+*****************************************************************************************************************************
+
+Difference Between fork and clone in GitHub
+============================================
+
+ Forking is a concept while cloning is a process operated over a repository which we are supposed to discuss here. 
+
+ Concept: Fork a repository
+ --------------------------
+
+ Fork is an operation been perform over the projects as real big projects contain chunks of pieces of code consisting of 1000 lines. Here if we try to do changes and if something goes wrong then it becomes very tedious for a programmer or community to correct it. So using this Fork operation we are creating a copy of the repository in which changes are supposed to be made and reflected without affecting the original project.
+
+ There is a connection that exists between the fork of a repository and the original repository itself. 
+
+The fork acts as a bridge between the original repository and the personal copy of the repository where we can make changes. After making the changes we can contribute back to the original repository using Pull Requests.
+
+
+==> It is the Actual Repo copy on personal Github account., later we can merge our changes with a pull request
+-----------------------------------------------------------------------------------------------------------------------
+
+Process: Clone a Repository
+============================
+
+When we create a new repository on GitHub or Any repository on Github, it exists as a remote location where our / any other repository is stored. Cloning a repository creates a local copy on our computer so that we can sync between both the local and remote locations of the repository.
+
+we can not contribute to the repository unless we are made the collaborator of the repository. Cloning is an ideal case when one wants to get his own copy of a repository where he may not be contributing to the original project.
+
+==> It is actual copy but stored in local machine., we cannot merge untill we are the contributors.
+
+************************************************************************************************************************************
+
+Git – Create a Branch From Another Branch
+=========================================
+
+Git is distributed version control system used for tracking changes in source code during software development.
+
+Git is designed to handle everything from small to very large projects with speed and efficiency.
+It allows multiple developers to work on the same codebase concurrently.
+Git stores data in a series of snapshots, which represent the state of the code at a specific point in time.
+-----------------------------------------------------------------------------------------------------------------
+
+In this article, we are going to create a new branch from an existing branch in Git. This is a useful feature if you want to work on a new feature or bug fix that is related to the existing branch. The new branch will have the same commit history as the existing branch but you can make changes to the new branch without affecting the existing branch.
+
+Step-by-Step Implementation
+***************************
+
+1. Ensure that you have checked out the branch from which you want to create the new branch. You can use the git checkout command to switch to the branch.
+
+git checkout existing-branch
+
+2. Use the git branch command to create a new branch.
+
+git branch new-branch
+
+3. Switch to the new branch using the git checkout command.
+
+git checkout new-branch
+
+4. Make changes to the new branch as needed. You can commit your changes to the new branch using the git commit command.
+
+git commit -m "Commit message"
+
+5. If you want to push the new branch to a remote repository, use the git push command.
+
+git push -u origin new-branch
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One Step ==> Create a Branch and Switch to it
+
+$ git chceckout -b develop master
+
+New Branch develop------ main branch -master
+
+*****************************************************
+
+
+Set your global username/email configuration:-
+================================================
+
+Open Git Bash and begin creating a username and email for working on Git Bash.
+
+Set your username:
+
+git config --global user.name "FIRST_NAME LAST_NAME"
+
+Set your email address:
+
+git config --global user.email "MY_NAME@example.com"
+
+-------------------------------------------------------
+
+How To Create and Manage Branches in GitBash?
+************************************************
+
+Suppose a team is working on a project and a branch is created for every member working on the project. Hence every member will work on their branches hence every time the best branch is merged with the master branch of the project. The branches make it a version-controlling system and make it very easy to maintain a project source code.
+
+Syntax:
+
+List all of the branches in your repository.
+
+git branch
+
+------------------------------------
+
+Create a new branch
+
+git branch branch_name
+------------------------------------
+
+Safe Delete the specified branch
+
+git branch -d branch_name
+------------------------------------
+
+Force delete the specified branch
+
+git branch -D branch_name
+
+-------------------------------------
+
+To navigate between the branches git checkout is used. To create a new branch and switch on it.
+
+git checkout -b new_branch_name
+-------------------------------------
+To simply switch to a branch
+
+git checkout branch_name
+
+After checkout to the branch, you can see a * on the current branch Now the same commit add and commit actions can be performed on this branch also.
+-----------------------------------------
+
+Merging Branches in GitBash
+============================
+First, reach the target branch
+
+git checkout branch_name
+
+------------------------------
+Merge the branch to target branch
+
+git merge new_branch
+
+------------------------------
+
+*************************************************************************************
